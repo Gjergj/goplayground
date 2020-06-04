@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"testing"
-	"time"
 
 	"github.com/bmizerany/assert"
 )
@@ -33,8 +31,8 @@ func TestAddNumber(t *testing.T) {
 		tc := tc
 		t.Run(tc.Name, func(t *testing.T) {
 			t.Parallel()
-			fmt.Println(tc.Name)
-			time.Sleep(3 * time.Second)
+			// fmt.Println(tc.Name)
+			// time.Sleep(3 * time.Second)
 			res := AddNumber(tc.I, tc.J)
 			assert.Equal(t, res, tc.Result)
 		})
