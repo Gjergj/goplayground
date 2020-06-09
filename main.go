@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
+	"play/playg"
 )
 
 func main() {
-	fmt.Println(AddNumber(1, 2))
+	fmt.Println(playg.AddNumber(1, 2))
 }

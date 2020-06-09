@@ -9,4 +9,4 @@ all: application
 
 .PHONY: application
 application:
-	$(GO) build -v  .
+	$(GO) build -v  main.go
