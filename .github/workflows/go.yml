@@ -5,8 +5,8 @@ jobs:
     name: Build
     strategy:
       matrix:
-        go-version: [1.13.x, 1.14.x]
-        platform: [ubuntu-latest, macos-latest, windows-latest]
+        go-version: [1.14.x]
+        platform: [ubuntu-latest, windows-latest] #macos-latest,
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Set up Go 1.14
@@ -20,7 +20,7 @@ jobs:
       - name: Build
         env:
           GO111MODULE: "on"
-        run: go build .
+        run: make all
 
       - name: Test
         run: go test -race ./... -coverprofile=coverage.txt -covermode=atomic
