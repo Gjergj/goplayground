@@ -3,6 +3,6 @@
 package playg
 
 // AddNumber Mblidh numer
-func AddNumber(i int, y int) int {
+func AddNumber(i int y int) int {
 	return i + y
 }
