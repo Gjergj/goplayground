@@ -7,4 +7,5 @@ import (
 
 func main() {
 	fmt.Println(playg.AddNumber(1, 2))
+fmt.Println("gjergj")
 }
