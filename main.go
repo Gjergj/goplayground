@@ -10,10 +10,12 @@ func main() {
 	// fmt.Println("gjergj")
 	usrList := &ds.UserList{}
 	usrList.Insert(&ds.User{Name: "gjergj"})
-	usrList.Insert(&ds.User{Name: "klara"})
-	usrList.Insert(&ds.User{Name: "sibel"})
+	usrList.Insert(&ds.User{Name: "gjergj"})
+	// usrList.Insert(&ds.User{Name: "klara"})
+	// usrList.Insert(&ds.User{Name: "gjergj"})
 	fmt.Println(usrList)
 
-	usrList.Reverse()
+	//usrList.Reverse()
 	fmt.Println(usrList)
+	fmt.Println(usrList.IsPalindrome())
 }

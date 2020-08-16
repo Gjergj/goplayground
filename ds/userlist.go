@@ -13,20 +13,21 @@ type UserList struct {
 	length int
 }
 
-func (u *UserList) Insert(user *User) {
+func (u *UserList) Insert(newuser *User) {
 	if u.root == nil {
-		u.root = user
+		u.root = newuser
 		u.length++
 		return
 	}
-	usr := u.root
+	insElement := u.root
 	for i := 0; i < u.length; i++ {
-		if usr.next == nil {
-			usr.next = user
+		if insElement.next == nil {
+			insElement.next = newuser
+			newuser.prev = insElement
 			u.length++
 			return
 		}
-		usr = usr.next
+		insElement = insElement.next
 	}
 }
 
@@ -63,6 +64,32 @@ func (u *UserList) Reverse() {
 		prev = current
 		current = next
 	}
-
 	u.root = prev
+}
+func (u *UserList) IsPalindrome() bool {
+	if (u.length % 2) != 0 {
+		return false
+	}
+	var left *User
+	var right *User
+	var middle *User
+	//go to middle of list
+	middle = u.root
+	for i := 1; i <= u.length/2; i++ {
+		middle = middle.next
+	}
+	left = middle.prev
+	right = middle
+
+	if left.Name != right.Name {
+		return false
+	}
+	if (left.prev != nil) && right.next != nil {
+		left = left.prev
+		right = right.next
+		if left.Name != right.Name {
+			return false
+		}
+	}
+	return true
 }
