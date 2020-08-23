@@ -1,0 +1,24 @@
+name: gjplayground
+version: 0.0.1
+summary: Testing Snap Publish
+description: |
+  This is just a test app to test the snap publishing
+confinement: strict
+base: core18
+grade: stable
+
+parts:
+  gjplayground:
+    source-type: local
+    plugin: dump
+    source: .
+    filesets:
+      mainapplication: [main]
+    stage:
+      - $mainapplication
+  #  stage:
+  #     - <file1>
+  #     - <file2>
+apps:
+  gjplayground:
+    command: main
