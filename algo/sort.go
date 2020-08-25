@@ -1,4 +1,4 @@
-package main
+package algo
 
 func mergeSort(items []int) []int {
 	if len(items) <= 1 {
