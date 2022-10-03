@@ -41,3 +41,21 @@ func BinarySearchNearest(items []int, len int, item int) int {
 	}
 	return right
 }
+
+func Binary_search_self(data []int, searchFor int) int {
+
+	low := 0
+	high := len(data)
+
+	for range data {
+		mid := (int)(high-low) / 2
+		if searchFor == data[mid] {
+			return mid
+		} else if searchFor < data[mid] {
+			high = mid - 1
+		} else {
+			low = mid + 1
+		}
+	}
+	return 0
+}
