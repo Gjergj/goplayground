@@ -48,7 +48,7 @@ func Binary_search_self(data []int, searchFor int) int {
 	high := len(data)
 
 	for range data {
-		mid := (int)(high-low) / 2
+		mid := (int)(high+low) / 2
 		if searchFor == data[mid] {
 			return mid
 		} else if searchFor < data[mid] {
